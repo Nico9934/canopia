@@ -1,0 +1,37 @@
+@use '../base/variables' as v;
+
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+
+@mixin heading ($color, $tamaño) {
+    @content;
+    color: $color;
+    font-size: $tamaño;
+}
+
+@mixin parrafo ($color, $tamaño) {
+    color: $color;
+    font-size: $tamaño;
+}
+
+@mixin btn ($color, $fondo, $color_hover, $fondo_hover) {
+    color: $color; 
+    background-color: $fondo;
+
+}

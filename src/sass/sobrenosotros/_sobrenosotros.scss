@@ -1,0 +1,76 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.nosotros {
+    background-color: v.$blanco;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        rgba(138, 144, 139, 0.845), 
+        rgba(138, 144, 139, 0.845)), 
+        url(https://media.admagazine.com/photos/618a6a49ac089e092dcc0252/16:9/w_2992,h_1683,c_limit/62032.jpg);
+    // background: url(https://media.admagazine.com/photos/618a6a49ac089e092dcc0252/16:9/w_2992,h_1683,c_limit/62032.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        @include m.tablet {
+            display: grid;
+            height: 25rem;
+            grid-template-columns: repeat(7,1fr);
+        }
+
+        
+    }
+
+    &__desc {
+        @include m.tablet {
+            grid-column: 5 / 8;
+        }
+
+        h3 {
+            color: v.$blanco;
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 2.5rem 0; 
+            @include m.tablet {
+                width: 100%;
+                font-size: v.$text_tablet
+            }
+            @include m.desktop {
+                font-size: v.$text_desktop;
+            }
+        }
+
+        p {
+            color: v.$blanco;
+            text-align: justify;
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+            font-size: 0.8rem;
+            @include m.tablet {
+                font-size: 1rem;
+
+            }
+        }
+    }
+    &__img {
+        
+        @include m.tablet {
+            grid-column: 1 / 4;
+            grid-row: 1 / 2;
+            height: 100%;
+
+        }
+
+        object-fit: contain;
+        height: 15rem;
+        width: 100%;
+        background: url(https://www.hola.com/imagenes/decoracion/20220623212352/diseno-jardin-consejos-paisajismo-mc/1-105-336/consejos-paisajismo-jardin-m.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

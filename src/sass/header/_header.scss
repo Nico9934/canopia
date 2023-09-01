@@ -1,0 +1,76 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+/*  Header */
+.header {
+    background-color: v.$blanco;
+    position: fixed; 
+    width: 100%;
+    
+    @include m.tablet {
+      display: flex;
+      position: fixed;
+      width: 100%;  
+      background-color: v.$color_primario;
+    }
+  }
+
+  
+  // @media (max-width: 680px) {
+  //   .header {
+  //     display: none;
+  //   }
+  // }
+  
+  .header__contenido {
+    
+    
+    
+    @include m.tablet {
+      padding: .5rem 0;
+      display: flex; 
+      align-items: center;
+      width: 100%;
+      justify-content: space-around;
+    }
+  }
+  
+  .logo {
+    display: flex;
+    color: v.$color_primario;
+    font-family: v.$fuente_logo;
+    font-size: v.$heading_mobile;
+    padding: 1.2rem;
+    
+    @include m.tablet {
+      font-size: v.$heading_desktop;
+      color: v.$blanco;
+      
+    }
+  }
+  
+  .header__menu {
+    display: none;
+    width: 50%;
+    justify-content: space-around;
+    flex-direction: row;
+
+    @include m.tablet {
+      display: flex; 
+
+    }
+  }
+  
+  .header__li {
+    display: inline-block;
+    color: v.$blanco;
+    cursor: pointer;
+    font-size: v.$text_desktop;
+
+    &:hover {
+      cursor: pointer;
+      color: v.$color_secundario;
+    }
+  }
+  

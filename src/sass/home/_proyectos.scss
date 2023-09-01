@@ -1,0 +1,182 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.proyectos {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+
+    @include m.tablet {
+        padding: 10% 0;
+        justify-content: center;
+
+    }
+
+    // @include m.tablet {
+    //     background: v.$blanco;
+
+    // }
+    @include m.tablet {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    &__fondo {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background: linear-gradient(rgba(37, 93, 59, 0.5),
+                rgba(37, 93, 59, 0.5),
+            ),
+            url(https://img.freepik.com/fotos-premium/arquiteto-paisagista-projetando-no-plano-de-analise-do-local_176124-1340.jpg?w=2000);
+        height: 100vh;
+
+        @include m.tablet {
+
+            // height: 20rem;
+            // background: linear-gradient(to left, #5E7560 50%, #FFFFFF 0%);
+            background: inherit;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        height: 100vh;
+        justify-content: space-around;
+        align-content: center;
+
+
+        @include m.tablet {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            height: unset;
+            align-items: center;
+        }
+    }
+
+    &__desc {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        @include m.tablet {
+            height: 70vh;
+            justify-content: space-around;
+            grid-column: 1 / 4;
+
+        }
+
+        h3 {
+            text-align: end;
+            margin: v.$separacion_mobile;
+            color: v.$blanco;
+            font-size: v.$heading_mobile;
+
+            @include m.tablet {
+                text-align: start;
+                color: v.$color_primario;
+                font-size: v.$heading_tablet;
+            }
+            @include m.desktop {
+                font-size: v.$heading_desktop; 
+            }
+        }
+
+        p {
+            line-height: 2;
+            text-align: justify;
+            color: v.$blanco;
+            font-size: v.$text_mobile;
+
+            @include m.tablet {
+                color: v.$color_primario;
+                line-height: 1.8;
+                font-size: v.$text_tablet;
+            }
+            @include m.desktop {
+                font-size: v.$text_desktop; 
+            }
+        }
+    }
+
+    &__imagen {
+
+        @include m.tablet {
+            background: url(https://img.freepik.com/fotos-premium/arquiteto-paisagista-projetando-no-plano-de-analise-do-local_176124-1340.jpg?w=2000);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 15rem;
+            grid-column: 5 / 8;
+            grid-row: 1 / 2;
+        }
+    }
+
+    button {
+        background-color: v.$color_primario;
+        display: block;
+        color: v.$blanco;
+        width: 10rem;
+        padding: 0.5rem 0;
+        margin: 2.5rem auto;
+        transition: all 0.2s;
+
+        &:hover {
+            cursor: pointer;
+            background-color: v.$color_secundario;
+            color: v.$color_primario;
+        }
+    }
+}
+
+// .descripcion {
+//     &__p {
+//         color: v.$blanco;
+//         line-height: 1.3;
+
+//         @include m.tablet {
+//             color: v.$color_primario;
+//             line-height: 1.8;
+            
+//         }
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     &__grid {
+//         display: flex;
+//         color: v.$blanco;
+//     }
+
+//     &__desc {
+
+//         .descripcion {
+
+//             &__heading{
+//                 color: v.$negro;
+//                 opacity: 1;
+//             }
+//             &__p {
+//                 font-weight: 400;
+//                 color: v.$blanco;
+//             }
+//         }
+//     }
+// }

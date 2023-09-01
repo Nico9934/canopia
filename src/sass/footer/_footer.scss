@@ -1,0 +1,90 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.footer {
+    background-color: v.$color_secundario;
+    width: 100%;
+    height: 100%;
+    color: v.$blanco;
+    padding: 1.5rem 0;
+    
+
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+
+        @include m.tablet {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    &__columna {
+        height: 30%;
+        margin-bottom: 0.8rem;
+        @include m.tablet {
+            height: 100%;
+            margin-bottom: 0;
+
+        }
+    }
+
+    &__iconos {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin-bottom: 1rem;
+        svg {
+            height: 1.5rem;
+        }
+    }
+    
+    
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.2;
+        width: 100%;
+
+        
+
+        .logo {
+            font-size: 2.3rem;
+            &:hover {
+                transition: all .2s;
+                cursor: pointer;
+                color: v.$color_primario;
+            }
+
+            &__p {
+                font-size: v.$text_mobile;
+                font-family: v.$fuente_principal;
+                display: inline-block;
+            }
+            
+           
+        }
+
+    }
+}
+
+
+.nav {
+    &__li {
+        font-size: 0.9rem;
+        text-align: center;
+        line-height: 1.5;
+        &:hover {
+            transition: all .2s;
+            color: v.$color_primario;
+            cursor: pointer;
+        }
+
+        @include m.tablet {
+            line-height: 1.9;
+        }
+    }
+}

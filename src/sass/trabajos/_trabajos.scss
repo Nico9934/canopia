@@ -1,0 +1,17 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+
+
+.trabajos {
+    height: 100vh;
+    width: 100%;
+    background-color: v.$blanco;
+
+    &__heading {
+        @include m.desktop {
+            font-size: 2.5rem;
+            color: v.$color_primario;
+        }
+    }
+}

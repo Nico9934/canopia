@@ -1,0 +1,53 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.menu-mobile {
+    position: fixed;
+    height: 60%;
+    width: 100%;
+    background-color: v.$color_secundario;
+    z-index: 10;
+    
+    
+    &__cerrado {
+        display: none;
+        transition: all 1s;
+    }
+
+    @include m.tablet {
+        display: none;
+    }
+
+    &__nav {
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+        padding: 1.5rem 0rem 1.5rem 1rem;
+        background-color: v.$blanco;
+    }
+    &__ul {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+    &__li {
+        font-size: 1rem;
+        font-weight: 700;
+        color: v.$color_primario;
+        cursor: pointer;
+    }
+    &__icono {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: v.$color_primario;
+        border-radius: 50%;
+        color: v.$blanco;
+        font-size: 1.5rem;
+        padding: .2rem;
+        font-weight: 900;
+        cursor: pointer;
+    }
+}

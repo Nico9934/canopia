@@ -1,0 +1,105 @@
+// @import '../base/variables';
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.limpieza {
+  // margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+    @include m.tablet {
+      height: 100vh;
+      display: flex;
+    }
+
+  &__fondo {
+    background: linear-gradient(to bottom, v.$blanco 70%, v.$color_primario 0%);
+    height: 100vh;
+
+    @include m.tablet {
+      
+      height: 20rem;
+      background: linear-gradient(to right, v.$color_primario 50%, v.$blanco 0%);
+    }
+  }
+
+  &__grid {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+
+
+    @include m.tablet {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      height: 25rem;
+    }
+
+  }
+
+  &__imagen {
+    // margin: -2rem;
+    background: url(https://recursos.bps.com.es/files/931/65.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 15rem;
+    @include m.tablet {
+      grid-column: 2 / 4;
+      height: 25rem;
+      width: 15rem;
+      margin-top: -1.5rem;
+      
+    }
+}
+
+// Tamaño de fuentes
+// $heading_mobile: 2rem; 
+// $text_mobile: 0.9rem;
+
+// $heading_tablet: 2.2rem;
+// $text_tablet: 0.8rem;
+
+// $heading_desktop: 2.5rem; 
+// $text_desktop: 1.3rem; 
+
+  &__desc {
+    color: v.$color_primario;
+    width: 100%;
+    @include m.tablet {
+      max-width: 100%;
+      grid-column-start: 5;
+      grid-column-end: 8;
+    }
+
+      h3 {
+        font-size: v.$heading_mobile;
+        display: flex;
+        text-align: end;
+        margin: v.$separacion_mobile;
+        justify-content: end;
+        width: 100%;
+        
+        @include m.tablet {
+            color: v.$color_primario;
+            font-size: v.$heading_tablet;
+            justify-content: end;
+            margin: 1.5rem 0;
+        }
+        @include m.desktop {
+            font-size: v.$heading_desktop;
+        }
+      }
+      p {
+        text-align: justify;
+        font-size: v.$text_mobile; 
+        margin-bottom: 2.5rem;
+        line-height: 2;
+        @include m.tablet {
+          font-size: v.$text_tablet;
+          line-height: 2;
+        }
+        @include m.desktop {
+          font-size: v.$text_desktop;
+        }
+      }
+  }
+}

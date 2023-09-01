@@ -1,0 +1,27 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body {
+  font-family: 'Roboto' ;
+}
+  
+  a {
+    text-decoration: none;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  button {
+    border: none;
+  }
+  .contenedor {
+    max-width: 90%;
+    margin: 0 auto;
+  }

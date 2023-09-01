@@ -1,0 +1,119 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.espacios {
+    background-color: v.$blanco;
+    color: v.$color_primario;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    // justify-content: center;
+
+
+    @include m.tablet {
+        background-color: v.$color_primario;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+
+    &__grid {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        background-color: v.$blanco;
+
+        @include m.tablet {
+            background-color: v.$color_primario;
+            display: grid;
+            height: 25rem;
+            grid-template-columns: repeat(7, 1fr);
+            align-items: center;
+        }
+    }
+
+    &__img {
+        // background: url(../../img/Seccion\ 2.jpg);
+        background: url(https://www.hola.com/imagenes/decoracion/20220623212352/diseno-jardin-consejos-paisajismo-mc/1-105-336/consejos-paisajismo-jardin-m.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 30%;
+
+        @include m.tablet {
+            grid-column: 1 / 4;
+            grid-row: 1 / 2;
+            height: 80%;
+        }
+
+    }
+
+    &__btn {
+        background-color: v.$color_primario;
+        display: inline-block;
+        color: v.$blanco;
+        width: 10rem;
+        padding: .5rem 0;
+        transition: all .2s;
+        margin: 2.5rem auto;
+        
+        @include m.tablet {
+            background-color: v.$blanco;
+            color: v.$color_primario;
+            margin: 2.5rem auto;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: v.$color_secundario;
+            color: v.$color_primario;
+
+            @include m.tablet {
+                background-color: v.$color_secundario;
+                color: v.$blanco;
+            }
+        }
+    }
+
+    &__desc {
+        @include m.tablet {
+            grid-column: 5 / 8;
+        }
+
+        h3 {
+            color: v.$color_primario;
+            font-size: v.$heading_desktop;
+            display: flex;
+            margin: 2.5rem 0;
+            justify-content: center;
+            text-align: center;
+            
+            @include m.tablet {
+                    font-size: v.$heading_tablet;
+                    text-align: end;
+                    color: v.$blanco;
+                    justify-content: end;
+            }
+            @include m.desktop{
+                    font-size: v.$heading_desktop;
+            }
+        }
+
+        p {
+            font-size: v.$text_mobile;
+            line-height: 2;
+            margin-bottom: 2.5rem;
+            text-align: justify;
+
+            @include m.tablet {
+                color: v.$blanco;
+                font-size: v.$text_tablet;
+                line-height: 1.8;
+            }
+            @include m.desktop {
+                font-size: v.$text_desktop; 
+            }
+        }
+    }
+}
